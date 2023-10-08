@@ -1,9 +1,9 @@
 -- Students by courses enrolled in
 USE university_sql_database_schema;
 
-SELECT students.student_name, students.student_lastname, courses.courses_id, courses.course_name
-FROM grades grades
-JOIN students students ON grades.grade_student_id = students.students_id
-JOIN courses courses ON grades.grade_course_id = courses.courses_id
-ORDER BY grades.grade_course_id ASC;
+SELECT s.student_name, s.student_lastname, c.courses_id, c.course_name
+FROM grades g
+JOIN students s ON g.grade_student_id = s.students_id
+JOIN courses c ON g.grade_course_id = c.courses_id
+ORDER BY g.grade_course_id ASC;
 
